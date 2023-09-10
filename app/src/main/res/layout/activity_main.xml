@@ -24,71 +24,71 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="@string/book_manager"
-        app:layout_constraintBottom_toTopOf="@+id/button11"
-        app:layout_constraintEnd_toEndOf="@+id/button11"
+        app:layout_constraintBottom_toTopOf="@+id/btnAll"
+        app:layout_constraintEnd_toEndOf="@+id/btnAll"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button11"
+        app:layout_constraintStart_toStartOf="@+id/btnAll"
         app:layout_constraintTop_toBottomOf="@+id/imageView2" />
 
     <Button
-        android:id="@+id/button11"
+        android:id="@+id/btnAll"
         style="@style/btnMainMenu"
         android:text="@string/all_books"
-        app:layout_constraintBottom_toTopOf="@+id/button10"
-        app:layout_constraintEnd_toEndOf="@+id/button10"
+        app:layout_constraintBottom_toTopOf="@+id/btnCurrent"
+        app:layout_constraintEnd_toEndOf="@+id/btnCurrent"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button10"
+        app:layout_constraintStart_toStartOf="@+id/btnCurrent"
         app:layout_constraintTop_toBottomOf="@+id/textView5" />
 
     <Button
-        android:id="@+id/button10"
+        android:id="@+id/btnCurrent"
         style="@style/btnMainMenu"
         android:text="@string/currently_reading"
-        app:layout_constraintBottom_toTopOf="@+id/button9"
-        app:layout_constraintEnd_toEndOf="@+id/button9"
+        app:layout_constraintBottom_toTopOf="@+id/btnAlready"
+        app:layout_constraintEnd_toEndOf="@+id/btnAlready"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button9"
-        app:layout_constraintTop_toBottomOf="@+id/button11" />
+        app:layout_constraintStart_toStartOf="@+id/btnAlready"
+        app:layout_constraintTop_toBottomOf="@+id/btnAll" />
 
     <Button
-        android:id="@+id/button9"
+        android:id="@+id/btnAlready"
         style="@style/btnMainMenu"
         android:text="@string/already_read"
-        app:layout_constraintBottom_toTopOf="@+id/button8"
-        app:layout_constraintEnd_toEndOf="@+id/button8"
+        app:layout_constraintBottom_toTopOf="@+id/btnWish"
+        app:layout_constraintEnd_toEndOf="@+id/btnWish"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button8"
-        app:layout_constraintTop_toBottomOf="@+id/button10" />
+        app:layout_constraintStart_toStartOf="@+id/btnWish"
+        app:layout_constraintTop_toBottomOf="@+id/btnCurrent" />
 
     <Button
-        android:id="@+id/button8"
+        android:id="@+id/btnWish"
         style="@style/btnMainMenu"
         android:text="@string/wishlist"
-        app:layout_constraintBottom_toTopOf="@+id/button7"
-        app:layout_constraintEnd_toEndOf="@+id/button7"
+        app:layout_constraintBottom_toTopOf="@+id/btnFavorites"
+        app:layout_constraintEnd_toEndOf="@+id/btnFavorites"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button7"
-        app:layout_constraintTop_toBottomOf="@+id/button9" />
+        app:layout_constraintStart_toStartOf="@+id/btnFavorites"
+        app:layout_constraintTop_toBottomOf="@+id/btnAlready" />
 
     <Button
-        android:id="@+id/button7"
+        android:id="@+id/btnFavorites"
         style="@style/btnMainMenu"
         android:text="@string/favorites"
-        app:layout_constraintBottom_toTopOf="@+id/button6"
-        app:layout_constraintEnd_toEndOf="@+id/button6"
+        app:layout_constraintBottom_toTopOf="@+id/btnAbout"
+        app:layout_constraintEnd_toEndOf="@+id/btnAbout"
         app:layout_constraintHorizontal_bias="0.5"
-        app:layout_constraintStart_toStartOf="@+id/button6"
-        app:layout_constraintTop_toBottomOf="@+id/button8" />
+        app:layout_constraintStart_toStartOf="@+id/btnAbout"
+        app:layout_constraintTop_toBottomOf="@+id/btnWish" />
 
     <Button
-        android:id="@+id/button6"
+        android:id="@+id/btnAbout"
         style="@style/btnMainMenu"
         android:text="@string/about"
         app:layout_constraintBottom_toTopOf="@+id/textView4"
         app:layout_constraintEnd_toEndOf="@+id/textView4"
         app:layout_constraintHorizontal_bias="0.5"
         app:layout_constraintStart_toStartOf="@+id/textView4"
-        app:layout_constraintTop_toBottomOf="@+id/button7" />
+        app:layout_constraintTop_toBottomOf="@+id/btnFavorites" />
 
     <TextView
         android:id="@+id/textView4"
@@ -98,6 +98,6 @@
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/button6" />
+        app:layout_constraintTop_toBottomOf="@+id/btnAbout" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
