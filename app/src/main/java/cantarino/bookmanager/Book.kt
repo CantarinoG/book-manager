@@ -1,3 +1,3 @@
 package cantarino.bookmanager
 
-class Book(val id: Int, val name: String, val author: String, val pages: Int, val imageURL: String, val shortDesc: String, val longDesc: String)
+class Book(var id: Int, var name: String, var author: String, var pages: Int, var imageURL: String, var shortDesc: String, var longDesc: String, var isExpanded: Boolean = false)

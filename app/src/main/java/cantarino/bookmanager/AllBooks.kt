@@ -3,6 +3,7 @@ package cantarino.bookmanager
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.recyclerview.widget.GridLayoutManager
+import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
 class AllBooks : AppCompatActivity() {
@@ -18,7 +19,7 @@ class AllBooks : AppCompatActivity() {
         rvAdapter = BookRecyclerViewAdapter(this)
 
         rvAll.adapter = rvAdapter
-        rvAll.layoutManager = GridLayoutManager(this, 2)
+        rvAll.layoutManager = LinearLayoutManager(this)
 
         val books = ArrayList<Book>()
         books.add(Book(1, "Book1", "Author1", 100,

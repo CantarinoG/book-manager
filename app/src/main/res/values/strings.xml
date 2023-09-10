@@ -9,4 +9,6 @@
     <string name="about">About</string>
     <string name="developed_by_github_com_cantarinog">Developed by github.com/CantarinoG</string>
     <string name="app_icon">App Icon</string>
+    <string name="author">Author:</string>
+    <string name="short_description">Short Description:</string>
 </resources>
