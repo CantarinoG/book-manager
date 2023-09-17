@@ -1,6 +1,7 @@
 package cantarino.bookmanager;
 
 import android.content.Context;
+import android.content.Intent;
 import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
@@ -46,10 +47,8 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
         holder.parent.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                int clickedPosition = holder.getAdapterPosition(); // Get the position when clicked
-                if (clickedPosition != RecyclerView.NO_POSITION) {
-                    Toast.makeText(mContext, books.get(clickedPosition).getName() + " Selected", Toast.LENGTH_SHORT).show();
-                }
+                Intent intent = new Intent(mContext, BookActivity.class);
+                mContext.startActivity(intent);
             }
         });
 
