@@ -1,5 +1,7 @@
 package cantarino.bookmanager;
 
+import static cantarino.bookmanager.BookActivity.BOOK_ID_KEY;
+
 import android.content.Context;
 import android.content.Intent;
 import android.util.Log;
@@ -48,6 +50,7 @@ public class BookRecyclerViewAdapter extends RecyclerView.Adapter<BookRecyclerVi
             @Override
             public void onClick(View v) {
                 Intent intent = new Intent(mContext, BookActivity.class);
+                intent.putExtra(BOOK_ID_KEY, books.get(holder.getAdapterPosition()).getId());
                 mContext.startActivity(intent);
             }
         });

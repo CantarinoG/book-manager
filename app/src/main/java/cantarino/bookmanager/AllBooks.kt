@@ -21,14 +21,6 @@ class AllBooks : AppCompatActivity() {
         rvAll.adapter = rvAdapter
         rvAll.layoutManager = LinearLayoutManager(this)
 
-        val books = ArrayList<Book>()
-        books.add(Book(1, "Book1", "Author1", 100,
-            "https://marketplace.canva.com/EAFersXpW3g/1/0/1003w/canva-blue-and-white-modern-business-book-cover-cfxNJXYre8I.jpg",
-        "It's a nice book!", "It's a really, really, really, really, really, really, really, really nice book."))
-        books.add(Book(2, "Book2", "Author2", 200,
-            "https://marketplace.canva.com/EAFersXpW3g/1/0/1003w/canva-blue-and-white-modern-business-book-cover-cfxNJXYre8I.jpg",
-            "It's a nice book!", "It's a really, really, really, really, really, really, really, really nice book."))
-
-        rvAdapter.setBooks(books)
+        rvAdapter.setBooks(Utils.getInstance().allBooks)
     }
 }
