@@ -20,20 +20,16 @@ public class Utils {
             initData();
         }
         if (null == alreadyReadBooks) {
-            allBooks = new ArrayList<>();
-            initData();
+            alreadyReadBooks = new ArrayList<>();
         }
         if (null == wantToReadBooks) {
-            allBooks = new ArrayList<>();
-            initData();
+            wantToReadBooks = new ArrayList<>();
         }
         if (null == currentlyReadingBooks) {
-            allBooks = new ArrayList<>();
-            initData();
+            currentlyReadingBooks = new ArrayList<>();
         }
         if (null == favoriteBooks) {
-            allBooks = new ArrayList<>();
-            initData();
+            favoriteBooks = new ArrayList<>();
         }
     }
 
@@ -83,4 +79,9 @@ public class Utils {
         }
         return null;
     }
+
+    public boolean addToAlreadyRead(Book book) {
+        return alreadyReadBooks.add(book);
+    }
+
 }

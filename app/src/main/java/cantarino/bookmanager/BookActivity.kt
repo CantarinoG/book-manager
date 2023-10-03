@@ -6,6 +6,7 @@ import android.os.Bundle
 import android.widget.Button
 import android.widget.ImageView
 import android.widget.TextView
+import android.widget.Toast
 import com.bumptech.glide.Glide
 
 class BookActivity : AppCompatActivity() {
@@ -41,7 +42,26 @@ class BookActivity : AppCompatActivity() {
                 var incomingBook = Utils.getInstance().getBookById(bookId)
                 if (null != incomingBook) {
                     setData(incomingBook)
+                    handleAlreadyRead(incomingBook)
                 }
+            }
+        }
+    }
+
+    private fun handleAlreadyRead(book: Book){
+        var alreadyReadBooks = Utils.getInstance().alreadyReadBooks
+        var existInAlreadyReadBooks = false
+
+        alreadyReadBooks.forEach { b ->
+            if (b.id == book.id) existInAlreadyReadBooks = true
+        }
+        if (existInAlreadyReadBooks) btnAlreadyRead.isEnabled = false
+        else {
+            btnAlreadyRead.setOnClickListener {
+                if (Utils.getInstance().addToAlreadyRead(book)) {
+                    Toast.makeText(this, "Book Added", Toast.LENGTH_SHORT).show()
+                    //TODO: Navigate the user
+                } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
             }
         }
     }
