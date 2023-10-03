@@ -45,6 +45,7 @@ class BookActivity : AppCompatActivity() {
                     handleAlreadyRead(incomingBook)
                     handleWantToRead(incomingBook)
                     handleCurrentReading(incomingBook)
+                    handleFavorites(incomingBook)
                 }
             }
         }
@@ -99,6 +100,24 @@ class BookActivity : AppCompatActivity() {
                 if(Utils.getInstance().addToCurrentlyReading(book)) {
                     Toast.makeText(this, "Book added", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, CurrentlyReadingBooksActivity::class.java))
+                } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun handleFavorites(book: Book) {
+        var favoriteBooks = Utils.getInstance().favoriteBooks
+        var existInFavoriteBooks = false
+
+        favoriteBooks.forEach { b ->
+            if(b.id == book.id) existInFavoriteBooks = true
+        }
+        if(existInFavoriteBooks) btnAddFavorites.isEnabled = false
+        else {
+            btnAddFavorites.setOnClickListener {
+                if(Utils.getInstance().addToFavorites(book)) {
+                    Toast.makeText(this, "Book added", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, FavoriteBooksActivity::class.java))
                 } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
             }
         }
