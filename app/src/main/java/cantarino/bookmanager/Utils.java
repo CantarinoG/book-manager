@@ -88,4 +88,6 @@ public class Utils {
         return wantToReadBooks.add(book);
     }
 
+    public boolean addToCurrentlyReading(Book book) { return currentlyReadingBooks.add(book);}
+
 }

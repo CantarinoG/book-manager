@@ -44,6 +44,7 @@ class BookActivity : AppCompatActivity() {
                     setData(incomingBook)
                     handleAlreadyRead(incomingBook)
                     handleWantToRead(incomingBook)
+                    handleCurrentReading(incomingBook)
                 }
             }
         }
@@ -80,6 +81,24 @@ class BookActivity : AppCompatActivity() {
                 if(Utils.getInstance().addToWantToRead(book)) {
                     Toast.makeText(this, "Book Added", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, WantToReadBooksActivity::class.java))
+                } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun handleCurrentReading(book: Book) {
+        var currentlyReadingBooks = Utils.getInstance().currentlyReadingBooks
+        var existInCurrentlyReadingBooks = false
+
+        currentlyReadingBooks.forEach { b ->
+            if(b.id == book.id) existInCurrentlyReadingBooks = true
+        }
+        if(existInCurrentlyReadingBooks) btnCurrently.isEnabled = false
+        else {
+            btnCurrently.setOnClickListener {
+                if(Utils.getInstance().addToCurrentlyReading(book)) {
+                    Toast.makeText(this, "Book added", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, CurrentlyReadingBooksActivity::class.java))
                 } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
             }
         }

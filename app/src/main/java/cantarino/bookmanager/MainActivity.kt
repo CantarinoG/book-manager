@@ -23,6 +23,7 @@ class MainActivity : AppCompatActivity() {
         btnAll.setOnClickListener { startActivity(Intent(this, AllBooks::class.java)) }
         btnAlready.setOnClickListener { startActivity(Intent(this, AlreadyReadBooksActivity::class.java)) }
         btnWish.setOnClickListener { startActivity(Intent(this, WantToReadBooksActivity::class.java)) }
+        btnCurrent.setOnClickListener { startActivity(Intent(this, CurrentlyReadingBooksActivity::class.java)) }
 
         Utils.getInstance()
 
