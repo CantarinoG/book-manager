@@ -21,6 +21,10 @@ class MainActivity : AppCompatActivity() {
         initViews()
 
         btnAll.setOnClickListener { startActivity(Intent(this, AllBooks::class.java)) }
+        btnAlready.setOnClickListener { startActivity(Intent(this, AlreadyReadBooksActivity::class.java)) }
+
+        Utils.getInstance()
+
     }
 
     private fun initViews() {

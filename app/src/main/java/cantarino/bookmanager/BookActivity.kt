@@ -60,7 +60,7 @@ class BookActivity : AppCompatActivity() {
             btnAlreadyRead.setOnClickListener {
                 if (Utils.getInstance().addToAlreadyRead(book)) {
                     Toast.makeText(this, "Book Added", Toast.LENGTH_SHORT).show()
-                    //TODO: Navigate the user
+                    startActivity(Intent(this, AlreadyReadBooksActivity::class.java))
                 } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
             }
         }

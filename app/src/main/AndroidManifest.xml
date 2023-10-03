@@ -15,6 +15,9 @@
         android:theme="@style/Theme.BookManager"
         tools:targetApi="31">
         <activity
+            android:name=".AlreadyReadBooksActivity"
+            android:exported="false" />
+        <activity
             android:name=".BookActivity"
             android:exported="false" />
         <activity
