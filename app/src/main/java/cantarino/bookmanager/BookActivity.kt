@@ -43,6 +43,7 @@ class BookActivity : AppCompatActivity() {
                 if (null != incomingBook) {
                     setData(incomingBook)
                     handleAlreadyRead(incomingBook)
+                    handleWantToRead(incomingBook)
                 }
             }
         }
@@ -61,6 +62,24 @@ class BookActivity : AppCompatActivity() {
                 if (Utils.getInstance().addToAlreadyRead(book)) {
                     Toast.makeText(this, "Book Added", Toast.LENGTH_SHORT).show()
                     startActivity(Intent(this, AlreadyReadBooksActivity::class.java))
+                } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
+            }
+        }
+    }
+
+    private fun handleWantToRead(book: Book) {
+        var wantToReadBooks = Utils.getInstance().wantToReadBooks
+        var existInWantToReadBooks = false
+
+        wantToReadBooks.forEach { b ->
+            if(b.id == book.id) existInWantToReadBooks = true
+        }
+        if(existInWantToReadBooks) btnWishlist.isEnabled = false
+        else {
+            btnWishlist.setOnClickListener {
+                if(Utils.getInstance().addToWantToRead(book)) {
+                    Toast.makeText(this, "Book Added", Toast.LENGTH_SHORT).show()
+                    startActivity(Intent(this, WantToReadBooksActivity::class.java))
                 } else Toast.makeText(this, "Something wrong happened, try again.", Toast.LENGTH_SHORT).show()
             }
         }

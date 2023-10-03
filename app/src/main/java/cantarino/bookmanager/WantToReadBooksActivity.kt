@@ -6,18 +6,19 @@ import android.os.Bundle
 import androidx.recyclerview.widget.LinearLayoutManager
 import androidx.recyclerview.widget.RecyclerView
 
-class AlreadyReadBooksActivity : AppCompatActivity() {
+class WantToReadBooksActivity : AppCompatActivity() {
 
-    private lateinit var rvAlready: RecyclerView
+    private lateinit var rvWantToRead: RecyclerView
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
-        setContentView(R.layout.activity_already_read_books)
-        rvAlready = findViewById(R.id.rvAlready)
+        setContentView(R.layout.activity_want_to_read_books)
+
+        rvWantToRead = findViewById(R.id.rvWantToRead)
         var adapter = BookRecyclerViewAdapter(this)
-        rvAlready.adapter = adapter
-        rvAlready.layoutManager = LinearLayoutManager(this)
-        adapter.setBooks(Utils.getInstance().alreadyReadBooks)
+        rvWantToRead.adapter = adapter
+        rvWantToRead.layoutManager = LinearLayoutManager(this)
+        adapter.setBooks(Utils.getInstance().wantToReadBooks)
     }
 
     override fun onBackPressed() {
@@ -25,4 +26,5 @@ class AlreadyReadBooksActivity : AppCompatActivity() {
         intent.flags = Intent.FLAG_ACTIVITY_CLEAR_TASK or Intent.FLAG_ACTIVITY_NEW_TASK
         startActivity(intent)
     }
+
 }
